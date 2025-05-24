@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 export const API = axios.create({
-  baseURL: 'https://server-2mp1.onrender.com:4000/api', // optional: change if you prefix routes
+  baseURL: 'https://server-2mp1.onrender.com/api', // optional: change if you prefix routes
   withCredentials: true, // ensures cookies (for auth) are sent
 });
 
