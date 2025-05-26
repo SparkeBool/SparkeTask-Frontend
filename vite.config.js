@@ -11,21 +11,5 @@ export default defineConfig({
       '@hello-pangea/dnd'
     ]
   },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'react';
-            if (id.includes('bootstrap')) return 'bootstrap';
-            if (id.includes('framer-motion')) return 'framer-motion';
-            if (id.includes('react-toastify')) return 'react-toastify';
-            if (id.includes('@hello-pangea/dnd')) return 'dnd';
-            return 'vendor'; // fallback for other libraries
-          }
-        },
-      },
-    },
-    chunkSizeWarningLimit: 1000, // (optional) Adjust warning limit (default is 500 KB)
-  },
+ exclude: ['react-toastify']
 });

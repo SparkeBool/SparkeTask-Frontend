@@ -1,9 +1,8 @@
 import TaskCard from './TaskCard';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
-import { AnimatePresence } from 'framer-motion';
-import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SafeDndBoard, { Droppable, Draggable, AnimatePresence } from './SafeDndBoard';
 
 export default function Board({ tasks, onDelete, onStatusChange, onShowForm, onEdit, onReorder }) {
   const statuses = ['todo', 'in-progress', 'done'];
@@ -56,7 +55,7 @@ export default function Board({ tasks, onDelete, onStatusChange, onShowForm, onE
         </Button>
       </div>
 
-      <DragDropContext onDragEnd={handleDragEnd}>
+      <SafeDndBoard onDragEnd={handleDragEnd}>
         <Row className="g-4">
           {statuses.map(status => (
             <Col key={status} lg={4}>
@@ -108,7 +107,7 @@ export default function Board({ tasks, onDelete, onStatusChange, onShowForm, onE
             </Col>
           ))}
         </Row>
-      </DragDropContext>
+      </SafeDndBoard>
 
       {/* Custom CSS for drag-and-drop */}
       <style>{`
