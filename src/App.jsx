@@ -58,7 +58,7 @@ function Dashboard() {
   } catch (error) {
     console.error("Failed to delete task:", error);
     toast.error("Failed to delete task");
-  }
+  } 
 }
 
 
