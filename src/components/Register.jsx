@@ -164,7 +164,7 @@ export default function Register() {
       {/* Add some global styles for the register page */}
       <style jsx>{`
         .bg-gradient-primary {
-          background: linear-gradient(135deg,rgb(255, 255, 255) 0%,rgb(248, 248, 248) 100%);
+          background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
         }
         .register-page {
           background-size: cover;
