@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
+import { FaEnvelope, FaLock, FaExclamationCircle } from 'react-icons/fa';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -50,7 +51,7 @@ export default function Login() {
   };
 
   return (
-    <div className="login-page min-vh-100 d-flex align-items-center bg-gradient-primary">
+    <div className="login-page min-vh-100 d-flex align-items-center bg-gradient-light">
       <div className="container py-5">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -63,10 +64,7 @@ export default function Login() {
               {/* Header Section */}
               <div className="card-header bg-white py-4 border-0 text-center">
                 <div className="mb-3">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#4E73DF" strokeWidth="2"/>
-                    <path d="M12 16V16.01M12 8V12" stroke="#4E73DF" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
+                  <FaExclamationCircle size={40} color="#4E73DF" />
                 </div>
                 <h2 className="h3 font-weight-800 text-primary mb-1">Welcome Back</h2>
                 <p className="text-muted mb-0">Sign in to continue to your dashboard</p>
@@ -82,7 +80,7 @@ export default function Login() {
                     </label>
                     <div className="input-group">
                       <span className="input-group-text bg-light border-end-0">
-                        <i className="fas fa-envelope text-muted"></i>
+                        <FaEnvelope className="text-muted" />
                       </span>
                       <input
                         type="email"
@@ -109,7 +107,7 @@ export default function Login() {
                     </div>
                     <div className="input-group">
                       <span className="input-group-text bg-light border-end-0">
-                        <i className="fas fa-lock text-muted"></i>
+                        <FaLock className="text-muted" />
                       </span>
                       <input
                         type="password"
@@ -165,28 +163,6 @@ export default function Login() {
           </div>
         </motion.div>
       </div>
-      
-      {/* Add some global styles for the login page */}
-      <style jsx>{`
-        .bg-gradient-primary {
-          background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
-        }
-        .login-page {
-          background-size: cover;
-          background-position: center;
-        }
-        .card {
-          border: none;
-          border-radius: 0.5rem;
-        }
-        .input-group-text {
-          transition: all 0.3s;
-        }
-        .form-control:focus + .input-group-text {
-          color: #4e73df;
-          background-color: #e9f0ff;
-        }
-      `}</style>
     </div>
   );
 }
