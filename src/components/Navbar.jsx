@@ -21,7 +21,7 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { path: "/dashboard", name: "Dashboard", icon: "bi-kanban" },
+    // { path: "/dashboard", name: "Dashboard", icon: "bi-kanban" },
     // { path: '/projects', name: 'Projects', icon: 'bi-folder' },
     // { path: '/team', name: 'Team', icon: 'bi-people' },
   ];
